@@ -10,4 +10,7 @@
 
 @interface Armor : NSObject
 
+@property (strong, nonatomic) NSString *name;
+@property int healthBonus;
+
 @end
