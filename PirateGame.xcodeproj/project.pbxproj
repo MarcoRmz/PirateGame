@@ -18,6 +18,7 @@
 		A9DAAE431B3C5ED20066C673 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DAAE421B3C5ED20066C673 /* Character.m */; };
 		A9DAAE461B3C5EE40066C673 /* Armor.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DAAE451B3C5EE40066C673 /* Armor.m */; };
 		A9DAAE491B3C5EF20066C673 /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DAAE481B3C5EF20066C673 /* Weapon.m */; };
+		A9DAAE4C1B3C66FE0066C673 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DAAE4B1B3C66FE0066C673 /* Factory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		A9DAAE451B3C5EE40066C673 /* Armor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Armor.m; sourceTree = "<group>"; };
 		A9DAAE471B3C5EF20066C673 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
 		A9DAAE481B3C5EF20066C673 /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weapon.m; sourceTree = "<group>"; };
+		A9DAAE4A1B3C66FE0066C673 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		A9DAAE4B1B3C66FE0066C673 /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				A9DAAE481B3C5EF20066C673 /* Weapon.m */,
 				A9DAAE3E1B3C5D850066C673 /* Tile.h */,
 				A9DAAE3F1B3C5D850066C673 /* Tile.m */,
+				A9DAAE4A1B3C66FE0066C673 /* Factory.h */,
+				A9DAAE4B1B3C66FE0066C673 /* Factory.m */,
 				A9DAAE221B3C5CD90066C673 /* Main.storyboard */,
 				A9DAAE251B3C5CD90066C673 /* Images.xcassets */,
 				A9DAAE271B3C5CD90066C673 /* LaunchScreen.xib */,
@@ -243,6 +248,7 @@
 				A9DAAE211B3C5CD90066C673 /* ViewController.m in Sources */,
 				A9DAAE431B3C5ED20066C673 /* Character.m in Sources */,
 				A9DAAE1E1B3C5CD90066C673 /* AppDelegate.m in Sources */,
+				A9DAAE4C1B3C66FE0066C673 /* Factory.m in Sources */,
 				A9DAAE461B3C5EE40066C673 /* Armor.m in Sources */,
 				A9DAAE1B1B3C5CD90066C673 /* main.m in Sources */,
 				A9DAAE401B3C5D850066C673 /* Tile.m in Sources */,
