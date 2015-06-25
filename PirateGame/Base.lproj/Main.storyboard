@@ -52,16 +52,6 @@
                                     <rect key="frame" x="16" y="55" width="71" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-cu-sUw">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Action">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="137" y="428" width="46" height="30"/>
-                                </variation>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjm-LH-tQa">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
@@ -118,6 +108,16 @@
                                     <rect key="frame" x="16" y="419" width="50" height="48"/>
                                 </variation>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcT-ET-FO2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="▶️">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="254" y="419" width="50" height="48"/>
+                                </variation>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGH-74-80v">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -138,14 +138,14 @@
                                     <rect key="frame" x="135" y="346" width="50" height="48"/>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcT-ET-FO2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-cu-sUw">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="▶️">
+                                <state key="normal" title="Action">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="254" y="419" width="50" height="48"/>
+                                    <rect key="frame" x="83" y="428" width="155" height="30"/>
                                 </variation>
                             </button>
                         </subviews>
@@ -154,32 +154,32 @@
                             <mask key="subviews">
                                 <exclude reference="Ohp-1M-gTQ"/>
                                 <exclude reference="rhL-dT-IRG"/>
-                                <exclude reference="bxE-cu-sUw"/>
                                 <exclude reference="rjm-LH-tQa"/>
                                 <exclude reference="efQ-Nh-akV"/>
                                 <exclude reference="25F-EX-W5u"/>
                                 <exclude reference="d65-g0-rpB"/>
                                 <exclude reference="QG8-PQ-sFQ"/>
                                 <exclude reference="aeo-Zl-vTO"/>
+                                <exclude reference="jcT-ET-FO2"/>
                                 <exclude reference="fGH-74-80v"/>
                                 <exclude reference="lz7-rl-hYr"/>
-                                <exclude reference="jcT-ET-FO2"/>
+                                <exclude reference="bxE-cu-sUw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Ohp-1M-gTQ"/>
                                 <include reference="rhL-dT-IRG"/>
-                                <include reference="bxE-cu-sUw"/>
                                 <include reference="rjm-LH-tQa"/>
                                 <include reference="efQ-Nh-akV"/>
                                 <include reference="25F-EX-W5u"/>
                                 <include reference="d65-g0-rpB"/>
                                 <include reference="QG8-PQ-sFQ"/>
                                 <include reference="aeo-Zl-vTO"/>
+                                <include reference="jcT-ET-FO2"/>
                                 <include reference="fGH-74-80v"/>
                                 <include reference="lz7-rl-hYr"/>
-                                <include reference="jcT-ET-FO2"/>
+                                <include reference="bxE-cu-sUw"/>
                             </mask>
                         </variation>
                     </view>
