@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>FEC9D1C7-E9E3-4972-8741-04E74244E32C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>PirateGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BD0BE5314C348A6E975E0680CBDEF74B64DBED0F</key>
 		<string>github.com:MarcoRmz/PirateGame.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PirateGame.xcodeproj/project.xcworkspace</string>
+	<string>PirateGame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BD0BE5314C348A6E975E0680CBDEF74B64DBED0F</key>
