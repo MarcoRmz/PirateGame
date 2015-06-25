@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Armor.h"
+#import "Weapon.h"
 
 @interface Character : NSObject
+
+@property int health;
+@property int damage;
+@property (strong, nonatomic) Armor *playerArmor;
+@property (strong, nonatomic) Weapon *playerWeapon;
 
 @end

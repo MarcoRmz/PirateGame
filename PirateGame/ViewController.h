@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Character.h"
+#import "Tile.h"
 
 @interface ViewController : UIViewController
 
