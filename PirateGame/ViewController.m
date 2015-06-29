@@ -69,6 +69,7 @@
     self.storyLabel.text = [self.map.firstObject story];
     self.currentLocation = CGPointMake(0, 0);
     //Missing correct action button title
+    //[[sender.actionButton] hidden];
     
     /*
     [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionFade animations:^{
