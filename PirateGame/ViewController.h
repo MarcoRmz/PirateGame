@@ -22,7 +22,7 @@
 @property (strong, nonatomic) Character *player;
 @property (strong, nonatomic) Character *boss;
 @property (strong, nonatomic) NSArray *map;
-@property CGPoint currentLocation;
+@property (nonatomic) CGPoint currentLocation;
 
 - (IBAction)actionButton:(UIButton *)sender;
 - (IBAction)upButton:(UIButton *)sender;

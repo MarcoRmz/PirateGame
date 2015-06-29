@@ -11,6 +11,6 @@
 @interface Weapon : NSObject
 
 @property (strong, nonatomic) NSString *name;
-@property int damage;
+@property (nonatomic) int damage;
 
 @end

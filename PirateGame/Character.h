@@ -12,8 +12,8 @@
 
 @interface Character : NSObject
 
-@property int health;
-@property int damage;
+@property (nonatomic) int health;
+@property (nonatomic) int damage;
 @property (strong, nonatomic) Armor *playerArmor;
 @property (strong, nonatomic) Weapon *playerWeapon;
 
