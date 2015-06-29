@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self startGame];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,17 +29,53 @@
 }
 
 - (IBAction)upButton:(UIButton *)sender {
+    [self updateXCordinate:0 andYCordinate:1];
 }
 
 - (IBAction)rightButton:(UIButton *)sender {
+    [self updateXCordinate:1 andYCordinate:0];
 }
 
 - (IBAction)leftButton:(UIButton *)sender {
+    [self updateXCordinate:-1 andYCordinate:0];
 }
 
 - (IBAction)downButton:(UIButton *)sender {
+    [self updateXCordinate:0 andYCordinate:-1];
 }
 
 - (IBAction)resetButton:(UIButton *)sender {
+    //launch alert to confirm reset
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"You triggered the alert" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+    [alertView show];
+    //if confirm
+    [self startGame];
+}
+
+-(void)updateXCordinate:(int)x andYCordinate:(int)y {
+    self.currentLocation = CGPointMake(self.currentLocation.x + x, self.currentLocation.y + y);
+    //Change from first object to current tile
+    self.backgroundImage.image = [self.map.firstObject backgroundImage];
+    self.storyLabel.text = [self.map.firstObject story];
+}
+
+-(void)startGame {
+    self.map = [self.gameFactory tiles];
+    self.armorLabel.text = [self.player.playerArmor name];
+    self.weaponLabel.text = [self.player.playerWeapon name];
+    self.healthLabel.text = [NSString stringWithFormat:@"%i", [self.player health]];
+    self.damageLabel.text = [NSString stringWithFormat:@"%i", [self.player damage]];
+    self.backgroundImage.image = [self.map.firstObject backgroundImage];
+    self.storyLabel.text = [self.map.firstObject story];
+    self.currentLocation = CGPointMake(0, 0);
+    //Missing correct action button title
+    
+    /*
+    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionFade animations:^{
+        self.backgroundImage.image = [self.map.firstObject backgroundImage];
+        self.storyLabel.text = [self.map.firstObject story];
+    } completion:^(BOOL finished) {
+        
+    }]; */
 }
 @end
