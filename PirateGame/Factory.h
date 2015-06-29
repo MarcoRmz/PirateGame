@@ -12,5 +12,6 @@
 @interface Factory : NSObject
 
 -(NSArray *) tiles;
+-(NSArray *) randomTiles:(NSArray *)tiles;
 
 @end

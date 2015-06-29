@@ -12,5 +12,7 @@
 
 @property (nonatomic, strong) NSString *story;
 @property (nonatomic, strong) NSString *background;
+@property (nonatomic, strong) NSString *action;
+@property BOOL actionDone;
 
 @end

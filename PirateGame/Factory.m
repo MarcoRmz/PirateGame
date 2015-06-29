@@ -7,7 +7,6 @@
 //
 
 #import "Factory.h"
-#import "Tile.h"
 
 @implementation Factory
 
@@ -32,7 +31,19 @@
     
     NSArray *tiles = [[NSArray alloc] initWithObjects:firstRow, secondRow, thirdRow, fourthRow, nil];
     
-    return tiles;
+    return [self randomTiles:tiles];
+}
+
+-(NSArray *) randomTiles:(NSArray *)tiles {
+    NSArray *newTiles = tiles;
+    
+    for (int col = 0; col < 4; col++) {
+        for (int row = 0; col < 5; row++) {
+            
+        }
+    }
+    
+    return newTiles;
 }
 
 @end
