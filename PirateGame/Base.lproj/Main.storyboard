@@ -114,7 +114,7 @@
                                     <rect key="frame" x="16" y="425" width="50" height="48"/>
                                 </variation>
                                 <connections>
-                                    <action selector="leftButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="e5G-by-FjV"/>
+                                    <action selector="leftButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IQE-7Y-PmM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcT-ET-FO2">
@@ -127,7 +127,7 @@
                                     <rect key="frame" x="254" y="425" width="50" height="48"/>
                                 </variation>
                                 <connections>
-                                    <action selector="rightButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Qvo-Yz-291"/>
+                                    <action selector="rightButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uO3-s4-rOk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGH-74-80v">
@@ -140,7 +140,7 @@
                                     <rect key="frame" x="135" y="512" width="50" height="48"/>
                                 </variation>
                                 <connections>
-                                    <action selector="downButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="crA-jv-nED"/>
+                                    <action selector="downButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4CX-rz-cwc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz7-rl-hYr">
@@ -153,7 +153,7 @@
                                     <rect key="frame" x="135" y="346" width="50" height="48"/>
                                 </variation>
                                 <connections>
-                                    <action selector="upButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dlt-71-OCK"/>
+                                    <action selector="upButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Bpy-eR-2OR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-cu-sUw">
@@ -167,7 +167,7 @@
                                     <rect key="frame" x="83" y="434" width="155" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="actionButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Eyo-Sk-9wz"/>
+                                    <action selector="actionButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ntV-JZ-iuS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS2-lq-rvQ">
@@ -181,6 +181,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="resetButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fkg-cZ-Qiu"/>
+                                    <action selector="resetButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="meO-Kr-QdF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -224,11 +225,16 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="actionButton" destination="bxE-cu-sUw" id="jKZ-df-1uL"/>
                         <outlet property="armorLabel" destination="25F-EX-W5u" id="A4N-S2-4gO"/>
                         <outlet property="backgroundImage" destination="CFq-cC-NLG" id="FYO-zq-vDH"/>
                         <outlet property="damageLabel" destination="d65-g0-rpB" id="uY8-ts-NR9"/>
+                        <outlet property="downButton" destination="fGH-74-80v" id="88D-nE-DgM"/>
                         <outlet property="healthLabel" destination="QG8-PQ-sFQ" id="MaS-r7-o9X"/>
+                        <outlet property="leftButton" destination="aeo-Zl-vTO" id="ZEj-7v-qIk"/>
+                        <outlet property="rightButton" destination="jcT-ET-FO2" id="3SB-Tf-lZ9"/>
                         <outlet property="storyLabel" destination="rjm-LH-tQa" id="xBg-Yi-FDo"/>
+                        <outlet property="upButton" destination="lz7-rl-hYr" id="wXC-gF-NYf"/>
                         <outlet property="weaponLabel" destination="efQ-Nh-akV" id="XBB-lP-fJv"/>
                     </connections>
                 </viewController>

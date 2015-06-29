@@ -23,13 +23,19 @@
 @property (strong, nonatomic) Character *boss;
 @property (strong, nonatomic) NSArray *map;
 @property (nonatomic) CGPoint currentLocation;
+@property (strong, nonatomic) IBOutlet UIButton *actionButton;
+@property (strong, nonatomic) IBOutlet UIButton *upButton;
+@property (strong, nonatomic) IBOutlet UIButton *leftButton;
+@property (strong, nonatomic) IBOutlet UIButton *rightButton;
+@property (strong, nonatomic) IBOutlet UIButton *downButton;
 
-- (IBAction)actionButton:(UIButton *)sender;
-- (IBAction)upButton:(UIButton *)sender;
-- (IBAction)rightButton:(UIButton *)sender;
-- (IBAction)leftButton:(UIButton *)sender;
-- (IBAction)downButton:(UIButton *)sender;
-- (IBAction)resetButton:(UIButton *)sender;
+
+- (IBAction)actionButtonPressed:(UIButton *)sender;
+- (IBAction)upButtonPressed:(UIButton *)sender;
+- (IBAction)rightButtonPressed:(UIButton *)sender;
+- (IBAction)leftButtonPressed:(UIButton *)sender;
+- (IBAction)downButtonPressed:(UIButton *)sender;
+- (IBAction)resetButtonPressed:(UIButton *)sender;
 -(void)startGame;
 -(void)updateXCordinate:(int)x andYCordinate:(int)y;
 
