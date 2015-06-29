@@ -11,8 +11,8 @@
 @interface Tile : NSObject
 
 @property (nonatomic, strong) NSString *story;
-@property (nonatomic, strong) NSString *background;
 @property (nonatomic, strong) NSString *action;
+@property (strong, nonatomic) UIImage *background;
 @property BOOL actionDone;
 
 @end

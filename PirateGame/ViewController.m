@@ -54,9 +54,11 @@
 
 -(void)updateXCordinate:(int)x andYCordinate:(int)y {
     self.currentLocation = CGPointMake(self.currentLocation.x + x, self.currentLocation.y + y);
-    //Change from first object to current tile
-    self.backgroundImage.image = [self.map.firstObject backgroundImage];
-    self.storyLabel.text = [self.map.firstObject story];
+
+    self.backgroundImage.image = [[self.map objectAtIndex:self.currentLocation.x] backgroundImage];
+    self.storyLabel.text = [[self.map objectAtIndex:self.currentLocation.x] story];
+    //Check if action has been done
+    [self actionButton].title = [[self.map objectAtIndex:self.currentLocation.x] action];
 }
 
 -(void)startGame {

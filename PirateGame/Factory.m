@@ -24,6 +24,29 @@
     Tile *eleventhTile = [[Tile alloc] init];
     Tile *twelveTile = [[Tile alloc] init];
     
+    NSString *story1 = @"";
+    NSString *story2 = @"";
+    NSString *story3 = @"";
+    NSString *story4 = @"";
+    NSString *story5 = @"";
+    NSString *story6 = @"";
+    NSString *story7 = @"";
+    NSString *story8 = @"";
+    NSString *story9 = @"";
+    NSString *story10 = @"";
+    NSString *story11 = @"";
+    NSString *story12 = @"";
+    NSMutableArray *stories = [[NSMutableArray alloc] initWithObjects: story2, story3, story4, story5, story6, story7, story8, story9, story10, story11, story12, nil];
+    
+    firstTile.story = story1;
+    int randomNumber;
+    for (int col = 1; col < 3; col++) {
+        for (int row = 0; col < 4; row++) {
+            randomNumber = arc4random() % [stories count];
+            
+        }
+    }
+    
     NSArray *firstRow = [[NSArray alloc] initWithObjects:firstTile, secondTile, thirdTile, nil];
     NSArray *secondRow = [[NSArray alloc] initWithObjects:fourthTile, fifthTile, sixthTile, nil];
     NSArray *thirdRow = [[NSArray alloc] initWithObjects:seventhTile, eightTile, ninthTile, nil];
@@ -31,17 +54,11 @@
     
     NSArray *tiles = [[NSArray alloc] initWithObjects:firstRow, secondRow, thirdRow, fourthRow, nil];
     
-    return [self randomTiles:tiles];
+    return tiles;
 }
 
 -(NSArray *) randomTiles:(NSArray *)tiles {
-    NSArray *newTiles = tiles;
     
-    for (int col = 0; col < 4; col++) {
-        for (int row = 0; col < 5; row++) {
-            
-        }
-    }
     
     return newTiles;
 }
