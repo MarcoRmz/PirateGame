@@ -49,18 +49,19 @@
     
     int randomNumber;
     Tile *tempTile = [[Tile alloc] init];
-    for (int col = 0; col < 3; col++) {
-        for (int row = 0; col < 4; row++) {
+    for (int col = 0; col < 4; col++) {
+        for (int row = 0; row < 3; row++) {
             if (col == 0 && row == 0) {
                 tempTile = [[tiles objectAtIndex:col] objectAtIndex:row];
                 tempTile.story = story1;
-                [[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
-                //[[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:tempTile];
+                //[[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
+                [[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:tempTile];
             } else {
                 randomNumber = arc4random() % [stories count];
                 tempTile = [[tiles objectAtIndex:col] objectAtIndex:row];
                 tempTile.story = [stories objectAtIndex:randomNumber];
-                [[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
+                //[[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
+                [[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:tempTile];
                 [stories removeObjectAtIndex:randomNumber];
             }
         }
