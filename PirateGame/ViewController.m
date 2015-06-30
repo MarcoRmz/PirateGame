@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "Factory.h"
+#import "Tile.h"
 
 @interface ViewController ()
 
@@ -25,26 +27,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)actionButton:(UIButton *)sender {
+- (IBAction)actionButtonPressed:(UIButton *)sender {
 }
 
-- (IBAction)upButton:(UIButton *)sender {
+- (IBAction)upButtonPressed:(UIButton *)sender {
     [self updateXCordinate:0 andYCordinate:1];
 }
 
-- (IBAction)rightButton:(UIButton *)sender {
+- (IBAction)rightButtonPressed:(UIButton *)sender {
     [self updateXCordinate:1 andYCordinate:0];
 }
 
-- (IBAction)leftButton:(UIButton *)sender {
+- (IBAction)leftButtonPressed:(UIButton *)sender {
     [self updateXCordinate:-1 andYCordinate:0];
 }
 
-- (IBAction)downButton:(UIButton *)sender {
+- (IBAction)downButtonPressed:(UIButton *)sender {
     [self updateXCordinate:0 andYCordinate:-1];
 }
 
-- (IBAction)resetButton:(UIButton *)sender {
+- (IBAction)resetButtonPressed:(UIButton *)sender {
     //launch alert to confirm reset
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"You triggered the alert" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
     [alertView show];
@@ -55,20 +57,25 @@
 -(void)updateXCordinate:(int)x andYCordinate:(int)y {
     self.currentLocation = CGPointMake(self.currentLocation.x + x, self.currentLocation.y + y);
 
-    self.backgroundImage.image = [[self.map objectAtIndex:self.currentLocation.x] backgroundImage];
-    self.storyLabel.text = [[self.map objectAtIndex:self.currentLocation.x] story];
+    self.backgroundImage.image = [[[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y] backgroundImage];
+    self.storyLabel.text = [[[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y] story];
     //Check if action has been done
-    [self actionButton].title = [[self.map objectAtIndex:self.currentLocation.x] action];
+    //self.actionButton.titleLabel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
 }
 
 -(void)startGame {
-    self.map = [self.gameFactory tiles];
+    Factory *gameFactory = [[Factory alloc] init];
+    self.map = [gameFactory tiles];
+    /*
     self.armorLabel.text = [self.player.playerArmor name];
     self.weaponLabel.text = [self.player.playerWeapon name];
     self.healthLabel.text = [NSString stringWithFormat:@"%i", [self.player health]];
     self.damageLabel.text = [NSString stringWithFormat:@"%i", [self.player damage]];
-    self.backgroundImage.image = [self.map.firstObject backgroundImage];
-    self.storyLabel.text = [self.map.firstObject story];
+    self.backgroundImage.image = [[[self.map objectAtIndex:0] objectAtIndex:0] backgroundImage];
+    */
+    Tile *tileModel = [[Tile alloc] init];
+    tileModel = [[self.map objectAtIndex:0] objectAtIndex:0];
+    self.storyLabel.text = tileModel.story;
     self.currentLocation = CGPointMake(0, 0);
     //Missing correct action button title
     //[[sender.actionButton] hidden];

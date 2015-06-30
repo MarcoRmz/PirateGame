@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Character.h"
-#import "Factory.h"
 
 @interface ViewController : UIViewController
 
@@ -18,7 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *healthLabel;
 @property (strong, nonatomic) IBOutlet UILabel *damageLabel;
 @property (strong, nonatomic) IBOutlet UILabel *storyLabel;
-@property (strong, nonatomic) Factory *gameFactory;
 @property (strong, nonatomic) Character *player;
 @property (strong, nonatomic) Character *boss;
 @property (strong, nonatomic) NSArray *map;
@@ -36,7 +34,5 @@
 - (IBAction)leftButtonPressed:(UIButton *)sender;
 - (IBAction)downButtonPressed:(UIButton *)sender;
 - (IBAction)resetButtonPressed:(UIButton *)sender;
--(void)startGame;
--(void)updateXCordinate:(int)x andYCordinate:(int)y;
 
 @end

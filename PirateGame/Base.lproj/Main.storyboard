@@ -180,7 +180,6 @@
                                     <rect key="frame" x="258" y="530" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="resetButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fkg-cZ-Qiu"/>
                                     <action selector="resetButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="meO-Kr-QdF"/>
                                 </connections>
                             </button>
