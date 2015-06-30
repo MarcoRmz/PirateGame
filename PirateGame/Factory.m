@@ -40,12 +40,12 @@
     
     //littlePuppy.image = [UIImage imageNamed:@"Street.jpg"];
     
-    NSArray *firstCol = [[NSArray alloc] initWithObjects:firstTile, secondTile, thirdTile, nil];
-    NSArray *secondCol = [[NSArray alloc] initWithObjects:fourthTile, fifthTile, sixthTile, nil];
-    NSArray *thirdCol = [[NSArray alloc] initWithObjects:seventhTile, eightTile, ninthTile, nil];
-    NSArray *fourthCol = [[NSArray alloc] initWithObjects:tenthTile, eleventhTile, twelveTile, nil];
+    NSMutableArray *firstCol = [[NSMutableArray alloc] initWithObjects:firstTile, secondTile, thirdTile, nil];
+    NSMutableArray *secondCol = [[NSMutableArray alloc] initWithObjects:fourthTile, fifthTile, sixthTile, nil];
+    NSMutableArray *thirdCol = [[NSMutableArray alloc] initWithObjects:seventhTile, eightTile, ninthTile, nil];
+    NSMutableArray *fourthCol = [[NSMutableArray alloc] initWithObjects:tenthTile, eleventhTile, twelveTile, nil];
     
-    NSArray *tiles = [[NSArray alloc] initWithObjects:firstCol, secondCol, thirdCol, fourthCol, nil];
+    NSMutableArray *tiles = [[NSMutableArray alloc] initWithObjects:firstCol, secondCol, thirdCol, fourthCol, nil];
     
     int randomNumber;
     Tile *tempTile = [[Tile alloc] init];
@@ -55,6 +55,7 @@
                 tempTile = [[tiles objectAtIndex:col] objectAtIndex:row];
                 tempTile.story = story1;
                 [[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
+                //[[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:tempTile];
             } else {
                 randomNumber = arc4random() % [stories count];
                 tempTile = [[tiles objectAtIndex:col] objectAtIndex:row];
