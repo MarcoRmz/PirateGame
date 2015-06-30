@@ -38,25 +38,7 @@
     NSString *story12 = @"story12";
     NSMutableArray *stories = [[NSMutableArray alloc] initWithObjects: story2, story3, story4, story5, story6, story7, story8, story9, story10, story11, story12, nil];
     
-    firstTile.story = story1;
-    secondTile.story = story2;
-    thirdTile.story = story3;
-    fourthTile.story = story4;
-    fifthTile.story = story5;
-    sixthTile.story = story6;
-    seventhTile.story = story7;
-    eightTile.story = story8;
-    ninthTile.story = story9;
-    tenthTile.story = story10;
-    eleventhTile.story = story11;
-    twelveTile.story = story12;
-    /*int randomNumber;
-    for (int col = 1; col < 3; col++) {
-        for (int row = 0; col < 4; row++) {
-            randomNumber = arc4random() % [stories count];
-            
-        }
-    } */
+    //littlePuppy.image = [UIImage imageNamed:@"Street.jpg"];
     
     NSArray *firstCol = [[NSArray alloc] initWithObjects:firstTile, secondTile, thirdTile, nil];
     NSArray *secondCol = [[NSArray alloc] initWithObjects:fourthTile, fifthTile, sixthTile, nil];
@@ -64,6 +46,24 @@
     NSArray *fourthCol = [[NSArray alloc] initWithObjects:tenthTile, eleventhTile, twelveTile, nil];
     
     NSArray *tiles = [[NSArray alloc] initWithObjects:firstCol, secondCol, thirdCol, fourthCol, nil];
+    
+    int randomNumber;
+    Tile *tempTile = [[Tile alloc] init];
+    for (int col = 0; col < 3; col++) {
+        for (int row = 0; col < 4; row++) {
+            if (col == 0 && row == 0) {
+                tempTile = [[tiles objectAtIndex:col] objectAtIndex:row];
+                tempTile.story = story1;
+                [[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
+            } else {
+                randomNumber = arc4random() % [stories count];
+                tempTile = [[tiles objectAtIndex:col] objectAtIndex:row];
+                tempTile.story = [stories objectAtIndex:randomNumber];
+                [[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
+                [stories removeObjectAtIndex:randomNumber];
+            }
+        }
+    }
     
     return tiles;
 }
