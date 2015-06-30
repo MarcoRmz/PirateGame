@@ -19,6 +19,18 @@
 		A9DAAE461B3C5EE40066C673 /* Armor.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DAAE451B3C5EE40066C673 /* Armor.m */; };
 		A9DAAE491B3C5EF20066C673 /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DAAE481B3C5EF20066C673 /* Weapon.m */; };
 		A9DAAE4C1B3C66FE0066C673 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DAAE4B1B3C66FE0066C673 /* Factory.m */; };
+		A9E1D4341B42E1BD0022F75F /* PirateAttack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D4281B42E1BD0022F75F /* PirateAttack.jpg */; };
+		A9E1D4351B42E1BD0022F75F /* PirateBlacksmith.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D4291B42E1BD0022F75F /* PirateBlacksmith.jpeg */; };
+		A9E1D4361B42E1BD0022F75F /* PirateBoss.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D42A1B42E1BD0022F75F /* PirateBoss.jpeg */; };
+		A9E1D4371B42E1BD0022F75F /* PirateFriendlyDock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D42B1B42E1BD0022F75F /* PirateFriendlyDock.jpg */; };
+		A9E1D4381B42E1BD0022F75F /* PirateOctopusAttack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D42C1B42E1BD0022F75F /* PirateOctopusAttack.jpg */; };
+		A9E1D4391B42E1BD0022F75F /* PirateParrot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D42D1B42E1BD0022F75F /* PirateParrot.jpg */; };
+		A9E1D43A1B42E1BD0022F75F /* PiratePlank.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D42E1B42E1BD0022F75F /* PiratePlank.jpg */; };
+		A9E1D43B1B42E1BD0022F75F /* PirateShipBattle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D42F1B42E1BD0022F75F /* PirateShipBattle.jpeg */; };
+		A9E1D43C1B42E1BD0022F75F /* PirateStart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D4301B42E1BD0022F75F /* PirateStart.jpg */; };
+		A9E1D43D1B42E1BD0022F75F /* PirateTreasure.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D4311B42E1BD0022F75F /* PirateTreasure.jpeg */; };
+		A9E1D43E1B42E1BD0022F75F /* PirateTreasurer2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D4321B42E1BD0022F75F /* PirateTreasurer2.jpeg */; };
+		A9E1D43F1B42E1BD0022F75F /* PirateWeapons.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9E1D4331B42E1BD0022F75F /* PirateWeapons.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +67,18 @@
 		A9DAAE481B3C5EF20066C673 /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weapon.m; sourceTree = "<group>"; };
 		A9DAAE4A1B3C66FE0066C673 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
 		A9DAAE4B1B3C66FE0066C673 /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
+		A9E1D4281B42E1BD0022F75F /* PirateAttack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateAttack.jpg; sourceTree = "<group>"; };
+		A9E1D4291B42E1BD0022F75F /* PirateBlacksmith.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateBlacksmith.jpeg; sourceTree = "<group>"; };
+		A9E1D42A1B42E1BD0022F75F /* PirateBoss.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateBoss.jpeg; sourceTree = "<group>"; };
+		A9E1D42B1B42E1BD0022F75F /* PirateFriendlyDock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateFriendlyDock.jpg; sourceTree = "<group>"; };
+		A9E1D42C1B42E1BD0022F75F /* PirateOctopusAttack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateOctopusAttack.jpg; sourceTree = "<group>"; };
+		A9E1D42D1B42E1BD0022F75F /* PirateParrot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateParrot.jpg; sourceTree = "<group>"; };
+		A9E1D42E1B42E1BD0022F75F /* PiratePlank.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PiratePlank.jpg; sourceTree = "<group>"; };
+		A9E1D42F1B42E1BD0022F75F /* PirateShipBattle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateShipBattle.jpeg; sourceTree = "<group>"; };
+		A9E1D4301B42E1BD0022F75F /* PirateStart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateStart.jpg; sourceTree = "<group>"; };
+		A9E1D4311B42E1BD0022F75F /* PirateTreasure.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateTreasure.jpeg; sourceTree = "<group>"; };
+		A9E1D4321B42E1BD0022F75F /* PirateTreasurer2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateTreasurer2.jpeg; sourceTree = "<group>"; };
+		A9E1D4331B42E1BD0022F75F /* PirateWeapons.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateWeapons.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +145,18 @@
 		A9DAAE181B3C5CD90066C673 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9E1D4281B42E1BD0022F75F /* PirateAttack.jpg */,
+				A9E1D4291B42E1BD0022F75F /* PirateBlacksmith.jpeg */,
+				A9E1D42A1B42E1BD0022F75F /* PirateBoss.jpeg */,
+				A9E1D42B1B42E1BD0022F75F /* PirateFriendlyDock.jpg */,
+				A9E1D42C1B42E1BD0022F75F /* PirateOctopusAttack.jpg */,
+				A9E1D42D1B42E1BD0022F75F /* PirateParrot.jpg */,
+				A9E1D42E1B42E1BD0022F75F /* PiratePlank.jpg */,
+				A9E1D42F1B42E1BD0022F75F /* PirateShipBattle.jpeg */,
+				A9E1D4301B42E1BD0022F75F /* PirateStart.jpg */,
+				A9E1D4311B42E1BD0022F75F /* PirateTreasure.jpeg */,
+				A9E1D4321B42E1BD0022F75F /* PirateTreasurer2.jpeg */,
+				A9E1D4331B42E1BD0022F75F /* PirateWeapons.jpeg */,
 				A9DAAE191B3C5CD90066C673 /* Info.plist */,
 				A9DAAE1A1B3C5CD90066C673 /* main.m */,
 			);
@@ -224,9 +260,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E1D4381B42E1BD0022F75F /* PirateOctopusAttack.jpg in Resources */,
+				A9E1D43F1B42E1BD0022F75F /* PirateWeapons.jpeg in Resources */,
+				A9E1D43A1B42E1BD0022F75F /* PiratePlank.jpg in Resources */,
+				A9E1D43D1B42E1BD0022F75F /* PirateTreasure.jpeg in Resources */,
+				A9E1D4371B42E1BD0022F75F /* PirateFriendlyDock.jpg in Resources */,
+				A9E1D4341B42E1BD0022F75F /* PirateAttack.jpg in Resources */,
 				A9DAAE241B3C5CD90066C673 /* Main.storyboard in Resources */,
 				A9DAAE291B3C5CD90066C673 /* LaunchScreen.xib in Resources */,
 				A9DAAE261B3C5CD90066C673 /* Images.xcassets in Resources */,
+				A9E1D43B1B42E1BD0022F75F /* PirateShipBattle.jpeg in Resources */,
+				A9E1D43E1B42E1BD0022F75F /* PirateTreasurer2.jpeg in Resources */,
+				A9E1D4351B42E1BD0022F75F /* PirateBlacksmith.jpeg in Resources */,
+				A9E1D43C1B42E1BD0022F75F /* PirateStart.jpg in Resources */,
+				A9E1D4361B42E1BD0022F75F /* PirateBoss.jpeg in Resources */,
+				A9E1D4391B42E1BD0022F75F /* PirateParrot.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +494,7 @@
 				A9DAAE3A1B3C5CD90066C673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9DAAE3B1B3C5CD90066C673 /* Build configuration list for PBXNativeTarget "PirateGameTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +503,7 @@
 				A9DAAE3D1B3C5CD90066C673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
