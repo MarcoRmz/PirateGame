@@ -11,6 +11,7 @@
 @implementation Factory
 
 -(NSArray *) tiles {
+    //Initialize Tiles
     Tile *firstTile = [[Tile alloc] init];
     Tile *secondTile = [[Tile alloc] init];
     Tile *thirdTile = [[Tile alloc] init];
@@ -24,19 +25,34 @@
     Tile *eleventhTile = [[Tile alloc] init];
     Tile *twelveTile = [[Tile alloc] init];
     
-    NSString *story1 = @"story1";
-    NSString *story2 = @"story2";
-    NSString *story3 = @"story3";
-    NSString *story4 = @"story4";
-    NSString *story5 = @"story5";
-    NSString *story6 = @"story6";
-    NSString *story7 = @"story7";
-    NSString *story8 = @"story8";
-    NSString *story9 = @"story9";
-    NSString *story10 = @"story10";
-    NSString *story11 = @"story11";
-    NSString *story12 = @"story12";
-    NSMutableArray *stories = [[NSMutableArray alloc] initWithObjects: story2, story3, story4, story5, story6, story7, story8, story9, story10, story11, story12, nil];
+    //Tiles' Stories
+    firstTile.story = @"story1";
+    secondTile.story = @"story2";
+    thirdTile.story = @"story3";
+    fourthTile.story = @"story4";
+    fifthTile.story = @"story5";
+    sixthTile.story = @"story6";
+    seventhTile.story = @"story7";
+    eightTile.story = @"story8";
+    ninthTile.story = @"story9";
+    tenthTile.story = @"story10";
+    eleventhTile.story = @"story11";
+    twelveTile.story = @"story12";
+    
+    //Tiles' Actions
+    
+    //Tiles' Action BOOL
+    
+    //Tiles' Armor
+    
+    //Tiles' Weapon
+    
+    //Tiles' Health effect
+    
+    //Tiles' BKG Image
+    
+    //Initialize Array of tiles
+    NSMutableArray *randTiles = [[NSMutableArray alloc] initWithObjects: firstTile, secondTile, thirdTile, fourthTile, fifthTile, sixthTile, seventhTile, eightTile, ninthTile, tenthTile, eleventhTile, twelveTile, nil];
     
     //littlePuppy.image = [UIImage imageNamed:@"Street.jpg"];
     
@@ -48,21 +64,15 @@
     NSMutableArray *tiles = [[NSMutableArray alloc] initWithObjects:firstCol, secondCol, thirdCol, fourthCol, nil];
     
     int randomNumber;
-    Tile *tempTile = [[Tile alloc] init];
     for (int col = 0; col < 4; col++) {
         for (int row = 0; row < 3; row++) {
             if (col == 0 && row == 0) {
-                tempTile = [[tiles objectAtIndex:col] objectAtIndex:row];
-                tempTile.story = story1;
-                //[[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
-                [[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:tempTile];
+                [[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:firstTile];
             } else {
-                randomNumber = arc4random() % [stories count];
-                tempTile = [[tiles objectAtIndex:col] objectAtIndex:row];
-                tempTile.story = [stories objectAtIndex:randomNumber];
+                randomNumber = arc4random() % [randTiles count];
                 //[[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
-                [[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:tempTile];
-                [stories removeObjectAtIndex:randomNumber];
+                [[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:[randTiles objectAtIndex:randomNumber]];
+                [randTiles removeObjectAtIndex:randomNumber];
             }
         }
     }
