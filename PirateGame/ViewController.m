@@ -56,9 +56,12 @@
 
 -(void)updateXCordinate:(int)x andYCordinate:(int)y {
     self.currentLocation = CGPointMake(self.currentLocation.x + x, self.currentLocation.y + y);
+    Tile *tileModel = [[Tile alloc] init];
+    tileModel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
 
-    self.backgroundImage.image = [[[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y] backgroundImage];
-    self.storyLabel.text = [[[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y] story];
+    self.backgroundImage.image = tileModel.background;
+    self.storyLabel.text = tileModel.story;
+    
     //Check if action has been done
     //self.actionButton.titleLabel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
 }
@@ -66,18 +69,23 @@
 -(void)startGame {
     Factory *gameFactory = [[Factory alloc] init];
     self.map = [gameFactory tiles];
-    /*
-    self.armorLabel.text = [self.player.playerArmor name];
-    self.weaponLabel.text = [self.player.playerWeapon name];
-    self.healthLabel.text = [NSString stringWithFormat:@"%i", [self.player health]];
-    self.damageLabel.text = [NSString stringWithFormat:@"%i", [self.player damage]];
-    self.backgroundImage.image = [[[self.map objectAtIndex:0] objectAtIndex:0] backgroundImage];
-    */
+    
     Tile *tileModel = [[Tile alloc] init];
     tileModel = [[self.map objectAtIndex:0] objectAtIndex:0];
+    
+    self.player.health = 100;
+    self.player.damage = 0;
+    self.player.playerArmor = tileModel.armor;
+    self.player.playerWeapon = tileModel.weapon;
+    self.armorLabel.text = [self.player.playerArmor name];
+    self.weaponLabel.text = [self.player.playerWeapon name];
+    self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];
+    self.damageLabel.text = [NSString stringWithFormat:@"%i", self.player.damage];
+    self.backgroundImage.image = tileModel.background;
     self.storyLabel.text = tileModel.story;
     self.currentLocation = CGPointMake(0, 0);
-    //Missing correct action button title
+    //self.actionButton.title = tileModel.action;
+
     //[[sender.actionButton] hidden];
     
     /*
