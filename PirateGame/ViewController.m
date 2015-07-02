@@ -80,8 +80,9 @@
     
     self.player.health = 100;
     self.player.damage = 0;
-    self.player.playerArmor = tileModel.armor;
-    self.player.playerWeapon = tileModel.weapon;
+    self.player.playerArmor.name = tileModel.armor.name;
+    self.player.playerArmor.healthBonus = tileModel.armor.healthBonus;
+    NSLog(@"PLayer armor: %@, Player weapon: %@", self.player.playerArmor.name, self.player.playerWeapon.name);
     self.armorLabel.text = self.player.playerArmor.name;
     self.weaponLabel.text = self.player.playerWeapon.name;
     self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];

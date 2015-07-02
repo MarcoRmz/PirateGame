@@ -68,40 +68,46 @@
     twelveTile.actionDone = NO;
     
     //Tiles' Armor
-    Armor *armor = [[Armor alloc] init];
-    armor.name = @"Cloth";
-    armor.healthBonus = 5;
-    firstTile.armor = armor;
+    Armor *armor1 = [[Armor alloc] init];
+    armor1.name = @"Cloth";
+    armor1.healthBonus = 5;
+    firstTile.armor = armor1;
     
-    armor.name = @"Knight Armor";
-    armor.healthBonus = 20;
-    ninthTile.armor = armor;
+    Armor *armor2 = [[Armor alloc] init];
+    armor2.name = @"Knight Armor";
+    armor2.healthBonus = 20;
+    ninthTile.armor = armor2;
     
-    armor.name = @"Piercing Silk";
-    armor.healthBonus = 10;
-    tenthTile.armor = armor;
+    Armor *armor3 = [[Armor alloc] init];
+    armor3.name = @"Piercing Silk";
+    armor3.healthBonus = 10;
+    tenthTile.armor = armor3;
     
-    armor.name = @"Shark Skin";
-    armor.healthBonus = 15;
-    eleventhTile.armor = armor;
+    Armor *armor4 = [[Armor alloc] init];
+    armor4.name = @"Shark Skin";
+    armor4.healthBonus = 15;
+    eleventhTile.armor = armor4;
     
     //Tiles' Weapon
-    Weapon *weapon = [[Weapon alloc] init];
-    weapon.name = @"Fists";
-    weapon.damage = 5;
-    firstTile.weapon = weapon;
+    Weapon *weapon1 = [[Weapon alloc] init];
+    weapon1.name = @"Fists";
+    weapon1.damage = 5;
+    firstTile.weapon = weapon1;
     
-    weapon.name = @"Knife";
-    weapon.damage = 10;
-    secondTile.weapon = weapon;
+    Weapon *weapon2 = [[Weapon alloc] init];
+    weapon2.name = @"Knife";
+    weapon2.damage = 10;
+    secondTile.weapon = weapon2;
     
-    weapon.name = @"Sword";
-    weapon.damage = 15;
-    thirdTile.weapon = weapon;
+    Weapon *weapon3 = [[Weapon alloc] init];
+    weapon3.name = @"Sword";
+    weapon3.damage = 15;
+    thirdTile.weapon = weapon3;
     
-    weapon.name = @"Gun";
-    weapon.damage = 20;
-    eightTile.weapon = weapon;
+    Weapon *weapon4 = [[Weapon alloc] init];
+    weapon4.name = @"Gun";
+    weapon4.damage = 20;
+    eightTile.weapon = weapon4;
     
     //Tiles' Health effect
     firstTile.healthEffect = -5;
