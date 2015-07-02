@@ -28,6 +28,8 @@
 }
 
 - (IBAction)actionButtonPressed:(UIButton *)sender {
+    //Check if action has been done
+    //[[sender.actionButton] hidden];
 }
 
 - (IBAction)upButtonPressed:(UIButton *)sender {
@@ -58,12 +60,15 @@
     self.currentLocation = CGPointMake(self.currentLocation.x + x, self.currentLocation.y + y);
     Tile *tileModel = [[Tile alloc] init];
     tileModel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
-
-    self.backgroundImage.image = tileModel.background;
-    self.storyLabel.text = tileModel.story;
     
-    //Check if action has been done
-    //self.actionButton.titleLabel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
+    
+     [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+     self.backgroundImage.image = tileModel.background;
+     self.storyLabel.text = tileModel.story;
+     //self.actionButton.titleLabel = tileModel.action;
+     } completion:^(BOOL finished) {
+     
+     }];
 }
 
 -(void)startGame {
@@ -77,23 +82,13 @@
     self.player.damage = 0;
     self.player.playerArmor = tileModel.armor;
     self.player.playerWeapon = tileModel.weapon;
-    self.armorLabel.text = [self.player.playerArmor name];
-    self.weaponLabel.text = [self.player.playerWeapon name];
+    self.armorLabel.text = self.player.playerArmor.name;
+    self.weaponLabel.text = self.player.playerWeapon.name;
     self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];
     self.damageLabel.text = [NSString stringWithFormat:@"%i", self.player.damage];
     self.backgroundImage.image = tileModel.background;
     self.storyLabel.text = tileModel.story;
     self.currentLocation = CGPointMake(0, 0);
     //self.actionButton.title = tileModel.action;
-
-    //[[sender.actionButton] hidden];
-    
-    /*
-    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionFade animations:^{
-        self.backgroundImage.image = [self.map.firstObject backgroundImage];
-        self.storyLabel.text = [self.map.firstObject story];
-    } completion:^(BOOL finished) {
-        
-    }]; */
 }
 @end
