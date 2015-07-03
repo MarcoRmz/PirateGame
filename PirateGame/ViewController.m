@@ -28,8 +28,42 @@
 }
 
 - (IBAction)actionButtonPressed:(UIButton *)sender {
-    //Check if action has been done
-    //[[sender.actionButton] hidden];
+    Tile *tileModel = [[Tile alloc] init];
+    tileModel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
+    
+    if (!tileModel.actionDone) {
+        Character *playerCreation = [[Character alloc] init];
+        playerCreation.health = self.player.health + tileModel.healthEffect;
+        playerCreation.damage = self.player.damage;
+        //Damage??
+        //playerCreation.damage = self.player.damage + tileModel.damage;
+        
+        if (tileModel.armor != nil) {
+            Armor *playerArmor = [[Armor alloc] init];
+            playerArmor = tileModel.armor;
+            playerCreation.playerArmor = playerArmor;
+        } else {
+            playerCreation.playerArmor = self.player.playerArmor;
+        }
+        
+        if (tileModel.weapon != nil) {
+            Weapon *playerWeapon = [[Weapon alloc] init];
+            playerWeapon = tileModel.weapon;
+            playerCreation.playerWeapon = playerWeapon;
+        } else {
+            playerCreation.playerWeapon = self.player.playerWeapon;
+        }
+        
+        self.player = playerCreation;
+        self.armorLabel.text = self.player.playerArmor.name;
+        self.weaponLabel.text = self.player.playerWeapon.name;
+        self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];
+        self.damageLabel.text = [NSString stringWithFormat:@"%i", self.player.damage];
+        
+        tileModel.actionDone = YES;
+        self.actionButton.backgroundColor = [UIColor redColor];
+        [[self.map objectAtIndex:self.currentLocation.x] replaceObjectAtIndex:self.currentLocation.y withObject:tileModel];
+    }
 }
 
 - (IBAction)upButtonPressed:(UIButton *)sender {
@@ -64,11 +98,16 @@
     Tile *tileModel = [[Tile alloc] init];
     tileModel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
     
+    if (!tileModel.actionDone) {
+        self.actionButton.backgroundColor = [UIColor blueColor];
+    } else {
+        self.actionButton.backgroundColor = [UIColor redColor];
+    }
     
     [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
         self.backgroundImage.image = tileModel.background;
         self.storyLabel.text = tileModel.story;
-        //self.actionButton.titleLabel = tileModel.action;
+        [self.actionButton setTitle:tileModel.action forState:UIControlStateNormal];
     } completion:^(BOOL finished) {
         
     }];

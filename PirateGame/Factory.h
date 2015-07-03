@@ -11,6 +11,6 @@
 
 @interface Factory : NSObject
 
--(NSArray *) tiles;
+-(NSMutableArray *) tiles;
 
 @end

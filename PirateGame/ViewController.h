@@ -19,7 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *storyLabel;
 @property (strong, nonatomic) Character *player;
 @property (strong, nonatomic) Character *boss;
-@property (strong, nonatomic) NSArray *map;
+@property (strong, nonatomic) NSMutableArray *map;
 @property (nonatomic) CGPoint currentLocation;
 @property (strong, nonatomic) IBOutlet UIButton *actionButton;
 @property (strong, nonatomic) IBOutlet UIButton *upButton;

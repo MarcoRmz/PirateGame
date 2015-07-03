@@ -10,7 +10,7 @@
 
 @implementation Factory
 
--(NSArray *) tiles {
+-(NSMutableArray *) tiles {
     //Initialize Tiles
     Tile *firstTile = [[Tile alloc] init];
     Tile *secondTile = [[Tile alloc] init];
@@ -111,10 +111,16 @@
     
     //Tiles' Health effect
     firstTile.healthEffect = -5;
+    secondTile.healthEffect = 0;
+    thirdTile.healthEffect = 0;
     fourthTile.healthEffect = 10;
     fifthTile.healthEffect = -20;
     sixthTile.healthEffect = -5;
     seventhTile.healthEffect = 20;
+    eightTile.healthEffect = 0;
+    ninthTile.healthEffect = 0;
+    tenthTile.healthEffect = 0;
+    eleventhTile.healthEffect = 0;
     twelveTile.healthEffect = -15;
     
     //Tiles' BKG Image
