@@ -122,7 +122,7 @@
     secondTile.background = [UIImage imageNamed:@"PirateParrot.jpg"];
     thirdTile.background = [UIImage imageNamed:@"PirateWeapons.jpeg"];
     fourthTile.background = [UIImage imageNamed:@"PirateAttack.jpg"];
-    fifthTile.background = [UIImage imageNamed:@"PirateShipBattle.jpg"];
+    fifthTile.background = [UIImage imageNamed:@"PirateShipBattle.jpeg"];
     sixthTile.background = [UIImage imageNamed:@"PiratePlank.jpg"];
     seventhTile.background = [UIImage imageNamed:@"PirateTreasure.jpeg"];
     eightTile.background = [UIImage imageNamed:@"PirateFriendlyDock.jpg"];
@@ -132,7 +132,7 @@
     twelveTile.background = [UIImage imageNamed:@"PirateBoss.jpeg"];
     
     //Initialize Array of tiles
-    NSMutableArray *randTiles = [[NSMutableArray alloc] initWithObjects: firstTile, secondTile, thirdTile, fourthTile, fifthTile, sixthTile, seventhTile, eightTile, ninthTile, tenthTile, eleventhTile, twelveTile, nil];
+    NSMutableArray *randTiles = [[NSMutableArray alloc] initWithObjects: secondTile, thirdTile, fourthTile, fifthTile, sixthTile, seventhTile, eightTile, ninthTile, tenthTile, eleventhTile, twelveTile, nil];
     
     NSMutableArray *firstCol = [[NSMutableArray alloc] initWithObjects:firstTile, secondTile, thirdTile, nil];
     NSMutableArray *secondCol = [[NSMutableArray alloc] initWithObjects:fourthTile, fifthTile, sixthTile, nil];
@@ -148,7 +148,6 @@
                 [[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:firstTile];
             } else {
                 randomNumber = arc4random() % [randTiles count];
-                //[[[tiles objectAtIndex:col] objectAtIndex:row] copy:tempTile];
                 [[tiles objectAtIndex:col] replaceObjectAtIndex:row withObject:[randTiles objectAtIndex:randomNumber]];
                 [randTiles removeObjectAtIndex:randomNumber];
             }
