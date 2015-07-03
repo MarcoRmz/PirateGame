@@ -33,19 +33,53 @@
 }
 
 - (IBAction)upButtonPressed:(UIButton *)sender {
-    [self updateXCordinate:0 andYCordinate:1];
+    self.currentLocation = CGPointMake(self.currentLocation.x, self.currentLocation.y + 1);
+    [self updateView];
 }
 
 - (IBAction)rightButtonPressed:(UIButton *)sender {
-    [self updateXCordinate:1 andYCordinate:0];
+    self.currentLocation = CGPointMake(self.currentLocation.x + 1, self.currentLocation.y);
+    [self updateView];
 }
 
 - (IBAction)leftButtonPressed:(UIButton *)sender {
-    [self updateXCordinate:-1 andYCordinate:0];
+    self.currentLocation = CGPointMake(self.currentLocation.x - 1, self.currentLocation.y);
+    [self updateView];
 }
 
 - (IBAction)downButtonPressed:(UIButton *)sender {
-    [self updateXCordinate:0 andYCordinate:-1];
+    self.currentLocation = CGPointMake(self.currentLocation.x, self.currentLocation.y - 1);
+    [self updateView];
+}
+
+-(void)updateView {
+    self.leftButton.hidden = [self disableMoveAtPoint:CGPointMake(self.currentLocation.x - 1, self.currentLocation.y)];
+    
+    self.upButton.hidden = [self disableMoveAtPoint:CGPointMake(self.currentLocation.x, self.currentLocation.y + 1)];
+    
+    self.rightButton.hidden = [self disableMoveAtPoint:CGPointMake(self.currentLocation.x + 1, self.currentLocation.y)];
+    
+    self.downButton.hidden = [self disableMoveAtPoint:CGPointMake(self.currentLocation.x, self.currentLocation.y - 1)];
+    
+    Tile *tileModel = [[Tile alloc] init];
+    tileModel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
+    
+    
+    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        self.backgroundImage.image = tileModel.background;
+        self.storyLabel.text = tileModel.story;
+        //self.actionButton.titleLabel = tileModel.action;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+-(BOOL)disableMoveAtPoint:(CGPoint)point {
+    if (point.y >= 0 && point.x >= 0 && point.x < [self.map count] && point.y < [[self.map objectAtIndex:point.x] count]) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 - (IBAction)resetButtonPressed:(UIButton *)sender {
@@ -54,21 +88,6 @@
     [alertView show];
     //if confirm
     [self startGame];
-}
-
--(void)updateXCordinate:(int)x andYCordinate:(int)y {
-    self.currentLocation = CGPointMake(self.currentLocation.x + x, self.currentLocation.y + y);
-    Tile *tileModel = [[Tile alloc] init];
-    tileModel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
-    
-    
-     [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-     self.backgroundImage.image = tileModel.background;
-     self.storyLabel.text = tileModel.story;
-     //self.actionButton.titleLabel = tileModel.action;
-     } completion:^(BOOL finished) {
-     
-     }];
 }
 
 -(void)startGame {
@@ -90,6 +109,8 @@
     self.backgroundImage.image = tileModel.background;
     self.storyLabel.text = tileModel.story;
     self.currentLocation = CGPointMake(0, 0);
+    self.leftButton.hidden = YES;
+    self.downButton.hidden = YES;
     //self.actionButton.title = tileModel.action;
 }
 @end
