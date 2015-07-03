@@ -97,11 +97,21 @@
     Tile *tileModel = [[Tile alloc] init];
     tileModel = [[self.map objectAtIndex:0] objectAtIndex:0];
     
-    self.player.health = 100;
-    self.player.damage = 0;
-    self.player.playerArmor.name = tileModel.armor.name;
-    self.player.playerArmor.healthBonus = tileModel.armor.healthBonus;
-    NSLog(@"PLayer armor: %@, Player weapon: %@", self.player.playerArmor.name, self.player.playerWeapon.name);
+    Armor *playerArmor = [[Armor alloc] init];
+    playerArmor.name = tileModel.armor.name;
+    playerArmor.healthBonus = tileModel.armor.healthBonus;
+    
+    Weapon *playerWeapon = [[Weapon alloc] init];
+    playerWeapon.name = tileModel.weapon.name;
+    playerWeapon.damage = tileModel.weapon.damage;
+    
+    Character *playerCreation = [[Character alloc] init];
+    playerCreation.health = 100;
+    playerCreation.damage = 0;
+    playerCreation.playerArmor = playerArmor;
+    playerCreation.playerWeapon = playerWeapon;
+    
+    self.player = playerCreation;
     self.armorLabel.text = self.player.playerArmor.name;
     self.weaponLabel.text = self.player.playerWeapon.name;
     self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];
@@ -111,6 +121,6 @@
     self.currentLocation = CGPointMake(0, 0);
     self.leftButton.hidden = YES;
     self.downButton.hidden = YES;
-    //self.actionButton.title = tileModel.action;
+    [self.actionButton setTitle:tileModel.action forState:UIControlStateNormal];
 }
 @end
