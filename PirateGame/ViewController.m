@@ -42,6 +42,7 @@
             Armor *playerArmor = [[Armor alloc] init];
             playerArmor = tileModel.armor;
             playerCreation.playerArmor = playerArmor;
+            playerCreation.health = playerCreation.health - self.player.playerArmor.healthBonus;
         } else {
             playerCreation.playerArmor = self.player.playerArmor;
         }
