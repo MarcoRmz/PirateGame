@@ -68,11 +68,6 @@
     twelveTile.actionDone = NO;
     
     //Tiles' Armor
-    Armor *armor1 = [[Armor alloc] init];
-    armor1.name = @"Cloth";
-    armor1.healthBonus = 5;
-    firstTile.armor = armor1;
-    
     Armor *armor2 = [[Armor alloc] init];
     armor2.name = @"Knight Armor";
     armor2.healthBonus = 20;
@@ -89,11 +84,6 @@
     eleventhTile.armor = armor4;
     
     //Tiles' Weapon
-    Weapon *weapon1 = [[Weapon alloc] init];
-    weapon1.name = @"Fists";
-    weapon1.damage = 5;
-    firstTile.weapon = weapon1;
-    
     Weapon *weapon2 = [[Weapon alloc] init];
     weapon2.name = @"Knife";
     weapon2.damage = 10;

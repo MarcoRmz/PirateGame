@@ -138,12 +138,12 @@
     tileModel = [[self.map objectAtIndex:0] objectAtIndex:0];
     
     Armor *playerArmor = [[Armor alloc] init];
-    playerArmor.name = tileModel.armor.name;
-    playerArmor.healthBonus = tileModel.armor.healthBonus;
+    playerArmor.name = @"Cloth";
+    playerArmor.healthBonus = 5;
     
     Weapon *playerWeapon = [[Weapon alloc] init];
-    playerWeapon.name = tileModel.weapon.name;
-    playerWeapon.damage = tileModel.weapon.damage;
+    playerWeapon.name = @"Fists";
+    playerWeapon.damage = 5;
     
     Character *playerCreation = [[Character alloc] init];
     playerCreation.health = 100;
