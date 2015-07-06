@@ -133,25 +133,11 @@
 -(void)startGame {
     Factory *gameFactory = [[Factory alloc] init];
     self.map = [gameFactory tiles];
+    self.player = [gameFactory player];
     
     Tile *tileModel = [[Tile alloc] init];
     tileModel = [[self.map objectAtIndex:0] objectAtIndex:0];
     
-    Armor *playerArmor = [[Armor alloc] init];
-    playerArmor.name = @"Cloth";
-    playerArmor.healthBonus = 5;
-    
-    Weapon *playerWeapon = [[Weapon alloc] init];
-    playerWeapon.name = @"Fists";
-    playerWeapon.damage = 5;
-    
-    Character *playerCreation = [[Character alloc] init];
-    playerCreation.health = 100;
-    playerCreation.damage = 0;
-    playerCreation.playerArmor = playerArmor;
-    playerCreation.playerWeapon = playerWeapon;
-    
-    self.player = playerCreation;
     self.armorLabel.text = self.player.playerArmor.name;
     self.weaponLabel.text = self.player.playerWeapon.name;
     self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];

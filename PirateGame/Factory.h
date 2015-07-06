@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Tile.h"
+#import "Character.h"
 
 @interface Factory : NSObject
 
 -(NSMutableArray *) tiles;
+-(Character *) player;
 
 @end

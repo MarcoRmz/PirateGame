@@ -153,4 +153,22 @@
     return tiles;
 }
 
+-(Character *) player {
+    Armor *playerArmor = [[Armor alloc] init];
+    playerArmor.name = @"Cloth";
+    playerArmor.healthBonus = 5;
+    
+    Weapon *playerWeapon = [[Weapon alloc] init];
+    playerWeapon.name = @"Fists";
+    playerWeapon.damage = 5;
+    
+    Character *playerCreation = [[Character alloc] init];
+    playerCreation.health = 100;
+    playerCreation.damage = 0;
+    playerCreation.playerArmor = playerArmor;
+    playerCreation.playerWeapon = playerWeapon;
+    
+    return playerCreation;
+}
+
 @end
