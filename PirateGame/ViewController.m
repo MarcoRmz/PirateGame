@@ -47,12 +47,6 @@
         
         tileModel.actionDone = YES;
         [[self.map objectAtIndex:self.currentLocation.x] replaceObjectAtIndex:self.currentLocation.y withObject:tileModel];
-        
-        if (self.player.health > 0 && self.boss.health <= 0) {
-            //YOU WIN!
-        } else if (self.player.health <= 0) {
-            //YOU LOSE!
-        }
     } else if (!tileModel.actionDone) {
         Character *playerCreation = [[Character alloc] init];
         playerCreation.health = self.player.health + tileModel.healthEffect;
@@ -121,6 +115,32 @@
     Tile *tileModel = [[Tile alloc] init];
     tileModel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
     
+    if (self.player.health > 0 && self.boss.health <= 0) {
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Congratulations!" message:@"You won! Play Again?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            //Cancel
+        }];
+        UIAlertAction *resetAction = [UIAlertAction actionWithTitle:@"Restart" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self startGame];
+        }];
+        
+        [alertView addAction:cancelAction];
+        [alertView addAction:resetAction];
+        [self presentViewController:alertView animated:YES completion:nil];
+    } else if (self.player.health <= 0) {
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Game Over" message:@"You died, restart the game?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            //Cancel
+        }];
+        UIAlertAction *resetAction = [UIAlertAction actionWithTitle:@"Restart" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self startGame];
+        }];
+        
+        [alertView addAction:cancelAction];
+        [alertView addAction:resetAction];
+        [self presentViewController:alertView animated:YES completion:nil];
+    }
+    
     if ([tileModel.story containsString:@"Captain Black Beard"]) {
         self.actionButton.backgroundColor = [UIColor blueColor];
         if (!tileModel.actionDone) {
@@ -154,10 +174,17 @@
 
 - (IBAction)resetButtonPressed:(UIButton *)sender {
     //launch alert to confirm reset
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"You triggered the alert" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
-    [alertView show];
-    //if confirm
-    [self startGame];
+    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Reset" message:@"Are you sure you want to start again?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        //Cancel
+    }];
+    UIAlertAction *resetAction = [UIAlertAction actionWithTitle:@"Reset" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self startGame];
+    }];
+    
+    [alertView addAction:cancelAction];
+    [alertView addAction:resetAction];
+    [self presentViewController:alertView animated:YES completion:nil];
 }
 
 -(void)startGame {
