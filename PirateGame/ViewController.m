@@ -178,6 +178,8 @@
     self.currentLocation = CGPointMake(0, 0);
     self.leftButton.hidden = YES;
     self.downButton.hidden = YES;
+    self.upButton.hidden = NO;
+    self.rightButton.hidden = NO;
     [self.actionButton setTitle:tileModel.action forState:UIControlStateNormal];
 }
 @end
