@@ -171,4 +171,11 @@
     return playerCreation;
 }
 
+-(Character *) boss {    
+    Character *playerCreation = [[Character alloc] init];
+    playerCreation.health = 100;
+    
+    return playerCreation;
+}
+
 @end

@@ -134,6 +134,7 @@
     Factory *gameFactory = [[Factory alloc] init];
     self.map = [gameFactory tiles];
     self.player = [gameFactory player];
+    self.boss = [gameFactory boss];
     
     Tile *tileModel = [[Tile alloc] init];
     tileModel = [[self.map objectAtIndex:0] objectAtIndex:0];

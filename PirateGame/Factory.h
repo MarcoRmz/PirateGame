@@ -14,5 +14,6 @@
 
 -(NSMutableArray *) tiles;
 -(Character *) player;
+-(Character *) boss;
 
 @end
