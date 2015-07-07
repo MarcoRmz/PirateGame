@@ -37,7 +37,7 @@
     ninthTile.story = @"story9";
     tenthTile.story = @"story10";
     eleventhTile.story = @"story11";
-    twelveTile.story = @"story12";
+    twelveTile.story = @"Captain Black Beard";
     
     //Tiles' Actions
     firstTile.action = @"Chug Ron";
