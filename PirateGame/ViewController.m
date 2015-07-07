@@ -31,50 +31,60 @@
     Tile *tileModel = [[Tile alloc] init];
     tileModel = [[self.map objectAtIndex:self.currentLocation.x] objectAtIndex:self.currentLocation.y];
     
-    if (!tileModel.actionDone) {
+    if ([tileModel.story containsString:@"Captain Black Beard"]) {
+        Character *bossCreation = [[Character alloc] init];
+        bossCreation.health = self.boss.health - self.player.playerWeapon.damage;
+        self.boss = bossCreation;
+        
+        Character *playerCreation = [[Character alloc] init];
+        playerCreation.health = self.player.health + tileModel.healthEffect;
+        playerCreation.damage = self.player.damage;
+        //Damage??
+        //playerCreation.damage = self.player.damage + tileModel.damage;
+        self.player = playerCreation;
+        self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];
+        self.damageLabel.text = [NSString stringWithFormat:@"%i", self.player.damage];
+        
+        tileModel.actionDone = YES;
+        [[self.map objectAtIndex:self.currentLocation.x] replaceObjectAtIndex:self.currentLocation.y withObject:tileModel];
+        
+        if (self.player.health > 0 && self.boss.health <= 0) {
+            //YOU WIN!
+        } else if (self.player.health <= 0) {
+            //YOU LOSE!
+        }
+    } else if (!tileModel.actionDone) {
         Character *playerCreation = [[Character alloc] init];
         playerCreation.health = self.player.health + tileModel.healthEffect;
         playerCreation.damage = self.player.damage;
         //Damage??
         //playerCreation.damage = self.player.damage + tileModel.damage;
         
-        if (playerCreation.health > 0 && self.boss.health > 0) {
-            if (tileModel.armor != nil) {
-                Armor *playerArmor = [[Armor alloc] init];
-                playerArmor = tileModel.armor;
-                playerCreation.playerArmor = playerArmor;
-                playerCreation.health = playerCreation.health - self.player.playerArmor.healthBonus;
-            } else {
-                playerCreation.playerArmor = self.player.playerArmor;
-            }
-            
-            if (tileModel.weapon != nil) {
-                Weapon *playerWeapon = [[Weapon alloc] init];
-                playerWeapon = tileModel.weapon;
-                playerCreation.playerWeapon = playerWeapon;
-            } else {
-                playerCreation.playerWeapon = self.player.playerWeapon;
-            }
-            
-            if ([tileModel.story containsString:@"Captain Black Beard"]) {
-                Character *bossCreation = [[Character alloc] init];
-                bossCreation.health = self.boss.health - self.player.playerWeapon.damage;
-                self.boss = bossCreation;
-            }
-            
-            self.player = playerCreation;
-            self.armorLabel.text = self.player.playerArmor.name;
-            self.weaponLabel.text = self.player.playerWeapon.name;
-            self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];
-            self.damageLabel.text = [NSString stringWithFormat:@"%i", self.player.damage];
-            
-            tileModel.actionDone = YES;
-            [[self.map objectAtIndex:self.currentLocation.x] replaceObjectAtIndex:self.currentLocation.y withObject:tileModel];
-        } else if (playerCreation.health > 0 && self.boss.health <= 0) {
-            //YOU WIN!
+        if (tileModel.armor != nil) {
+            Armor *playerArmor = [[Armor alloc] init];
+            playerArmor = tileModel.armor;
+            playerCreation.playerArmor = playerArmor;
+            playerCreation.health = playerCreation.health - self.player.playerArmor.healthBonus;
         } else {
-            //YOU LOSE!
+            playerCreation.playerArmor = self.player.playerArmor;
         }
+        
+        if (tileModel.weapon != nil) {
+            Weapon *playerWeapon = [[Weapon alloc] init];
+            playerWeapon = tileModel.weapon;
+            playerCreation.playerWeapon = playerWeapon;
+        } else {
+            playerCreation.playerWeapon = self.player.playerWeapon;
+        }
+        
+        self.player = playerCreation;
+        self.armorLabel.text = self.player.playerArmor.name;
+        self.weaponLabel.text = self.player.playerWeapon.name;
+        self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];
+        self.damageLabel.text = [NSString stringWithFormat:@"%i", self.player.damage];
+        
+        tileModel.actionDone = YES;
+        [[self.map objectAtIndex:self.currentLocation.x] replaceObjectAtIndex:self.currentLocation.y withObject:tileModel];
     }
     [self updateView];
 }
