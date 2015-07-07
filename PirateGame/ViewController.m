@@ -34,6 +34,7 @@
     if ([tileModel.story containsString:@"Captain Black Beard"]) {
         Character *bossCreation = [[Character alloc] init];
         bossCreation.health = self.boss.health - self.player.playerWeapon.damage;
+        NSLog(@"Self Boss health: %i, Player weapon %i, Boss Health: %i", self.boss.health, self.player.playerWeapon.damage, bossCreation.health);
         self.boss = bossCreation;
         
         Character *playerCreation = [[Character alloc] init];
@@ -41,6 +42,8 @@
         playerCreation.damage = self.player.damage;
         //Damage??
         //playerCreation.damage = self.player.damage + tileModel.damage;
+        playerCreation.playerArmor = self.player.playerArmor;
+        playerCreation.playerWeapon = self.player.playerWeapon;
         self.player = playerCreation;
         self.healthLabel.text = [NSString stringWithFormat:@"%i", self.player.health];
         self.damageLabel.text = [NSString stringWithFormat:@"%i", self.player.damage];
