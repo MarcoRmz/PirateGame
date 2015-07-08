@@ -34,7 +34,6 @@
     if ([tileModel.story containsString:@"Captain Black Beard"]) {
         Character *bossCreation = [[Character alloc] init];
         bossCreation.health = self.boss.health - self.player.playerWeapon.damage;
-        NSLog(@"Self Boss health: %i, Player weapon %i, Boss Health: %i", self.boss.health, self.player.playerWeapon.damage, bossCreation.health);
         self.boss = bossCreation;
         
         Character *playerCreation = [[Character alloc] init];

@@ -26,18 +26,18 @@
     Tile *twelveTile = [[Tile alloc] init];
     
     //Tiles' Stories
-    firstTile.story = @"story1";
-    secondTile.story = @"story2";
-    thirdTile.story = @"story3";
-    fourthTile.story = @"story4";
-    fifthTile.story = @"story5";
-    sixthTile.story = @"story6";
-    seventhTile.story = @"story7";
-    eightTile.story = @"story8";
-    ninthTile.story = @"story9";
-    tenthTile.story = @"story10";
-    eleventhTile.story = @"story11";
-    twelveTile.story = @"Captain Black Beard";
+    firstTile.story = @"Over drinks a crew mate tells you: 'Captain, we need a leader such as yourself to undertake a voyage and stop the evil Pirate Black Beard.'";
+    secondTile.story = @"The crew starts to get scared and tired of the mission, convince them to continue the journey and get a powerful steel knife from them.";
+    thirdTile.story = @"You have arrived to the armory would you like to updrade your weapon to a sword?";
+    fourthTile.story = @"You have arrived to the ship's kitchen and you feel hungry, eat some soup?";
+    fifthTile.story = @"Your shio has been boarded by enemy pirates defend your ship from capture.";
+    sixthTile.story = @"Your crew has grown relentless and tired they have riotted and they want you to walk the plank.";
+    seventhTile.story = @"Your ship has found treasure island rejoice with its treasures.";
+    eightTile.story = @"Your ship has made port at a town you go to the shop for a gun, upgrade your weapon?";
+    ninthTile.story = @"You have found a forger and after telling your story he offers you a Knight armor, upgrade armor?";
+    tenthTile.story = @"You are at the Captain's Quarters and you find your piercing silk, would you like to put it on?";
+    eleventhTile.story = @"You have sailed to skark infested waters you know that shark skin is very hard and can be helpful in battle, fight shark?";
+    twelveTile.story = @"Finally, you have found Captain Black Beard, defeat him!";
     
     //Tiles' Actions
     firstTile.action = @"Chug Ron";
