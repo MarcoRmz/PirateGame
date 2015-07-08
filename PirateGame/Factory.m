@@ -164,7 +164,7 @@
     
     Character *playerCreation = [[Character alloc] init];
     playerCreation.health = 100;
-    playerCreation.damage = 0;
+    playerCreation.damage = 5;
     playerCreation.playerArmor = playerArmor;
     playerCreation.playerWeapon = playerWeapon;
     

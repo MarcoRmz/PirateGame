@@ -39,8 +39,6 @@
         Character *playerCreation = [[Character alloc] init];
         playerCreation.health = self.player.health + tileModel.healthEffect;
         playerCreation.damage = self.player.damage;
-        //Damage??
-        //playerCreation.damage = self.player.damage + tileModel.damage;
         playerCreation.playerArmor = self.player.playerArmor;
         playerCreation.playerWeapon = self.player.playerWeapon;
         self.player = playerCreation;
@@ -52,9 +50,6 @@
     } else if (!tileModel.actionDone) {
         Character *playerCreation = [[Character alloc] init];
         playerCreation.health = self.player.health + tileModel.healthEffect;
-        playerCreation.damage = self.player.damage;
-        //Damage??
-        //playerCreation.damage = self.player.damage + tileModel.damage;
         
         if (tileModel.armor != nil) {
             Armor *playerArmor = [[Armor alloc] init];
@@ -72,6 +67,8 @@
         } else {
             playerCreation.playerWeapon = self.player.playerWeapon;
         }
+        
+        playerCreation.damage = playerCreation.playerWeapon.damage;
         
         self.player = playerCreation;
         self.armorLabel.text = self.player.playerArmor.name;
