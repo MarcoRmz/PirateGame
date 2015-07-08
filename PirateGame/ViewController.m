@@ -178,6 +178,8 @@
         //Cancel
     }];
     UIAlertAction *resetAction = [UIAlertAction actionWithTitle:@"Reset" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        self.player = nil;
+        self.boss = nil;
         [self startGame];
     }];
     
